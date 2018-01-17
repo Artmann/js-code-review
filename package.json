@@ -1,5 +1,13 @@
 {
   "name": "js-code-review",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "^3.2.0",
+    "coffeescript": "1.12.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "tailwindcss": "^0.4.0",
+    "webpack-dev-server": "^2.11.0"
+  }
 }

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JsCodeReview</title>
+    <title><% if @title %><%= @title %> - JS Code Review<% else %>JS Code Review<% end %></title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
 
     <%= javascript_pack_tag 'application' %>
@@ -9,7 +12,7 @@
   </head>
 
   <body>
-    <div class="container mx-auto">
+    <div class="container mx-auto px-4 py-8">
       <%= yield %>
     </div>
   </body>

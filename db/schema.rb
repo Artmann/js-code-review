@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118084705) do
+ActiveRecord::Schema.define(version: 20180119220527) do
+
+  create_table "review_requests", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_review_requests_on_user_id"
+  end
+
+  create_table "source_files", force: :cascade do |t|
+    t.string "filename"
+    t.string "content"
+    t.string "language"
+    t.integer "review_request_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_request_id"], name: "index_source_files_on_review_request_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

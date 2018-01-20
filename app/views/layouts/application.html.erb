@@ -18,7 +18,7 @@
       <nav class="container mx-auto flex justify-between items-center h-16 px-4 lg:px-8">
         <%= link_to("JS Code Review", :root, class: 'no-underline text-white text-lg') %>
         <div class="hidden lg:flex">
-          <a href="#" class="text-white no-underline block mr-4 hover:underline">Submit your code</a>
+          <%= link_to('Submit your code', :new_review_request, class: 'text-white no-underline block mr-4 hover:underline') %>
           <a href="#" class="text-white no-underline block mr-4 hover:underline">Post a review</a>
           <% if user_signed_in? %>
             <a href="#" class="text-white no-underline block mr-4 hover:underline">My profile</a>

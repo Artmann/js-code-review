@@ -21,3 +21,7 @@ input[type=text], input[type=password], input[type=email] {
 .hover\:button:hover {
   @apply .bg-blue .text-white .border-transparent;
 }
+
+.button--cta {
+  @apply .bg-green-dark .text-white border-grey-lighter;
+}

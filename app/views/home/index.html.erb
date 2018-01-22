@@ -1,15 +1,48 @@
-<div class="text-center px-4 py-16 w-full">
-  <h1 class="mb-8">Hero Title</h1>
+<div class="text-center px-4 w-full bg-teal text-white pb-16">
+  <nav class="container mx-auto flex justify-between items-center h-16 px-4 lg:px-8 mb-16">
+    <%= link_to("JS Code Review", :root, class: 'no-underline text-white text-lg') %>
+    <div class="hidden lg:flex">
+      <%= link_to('Submit your code', :new_review_request, class: 'text-white text-sm no-underline block mr-4 hover:underline') %>
+      <a href="#" class="text-white text-sm no-underline block mr-4 hover:underline">Post a review</a>
+      <% if user_signed_in? %>
+        <a href="#" class="text-white text-sm no-underline block mr-4 hover:underline">My profile</a>
+        <%= link_to('Sign out', :destroy_user_session, method: :delete, class: 'text-white text-sm no-underline block mr-4 hover:underline') %>
+      <% else %>
+        <%= link_to('Sign in', :new_user_session, class: 'text-white text-sm no-underline block mr-4 hover:underline') %>
+      <% end %>
+    </div>
+  </nav>
+
+  <h1 class="mb-8 text-xl">Hero Title</h1>
   <p class="mb-8">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pharetra vehicula posuere.
   </p>
 
-  <%= link_to('Sign Up Now', :new_user_registration, class: 'inline-block mb-8 button') %>
+  <%= link_to('Sign Up Now', :new_user_registration, class: 'inline-block my-8 border-2 border-white rounded px-8 py-4 no-underline hover:underline text-lg font-semibold text-white') %>
+</div>
+
+<div class="w-full flex flex-col items-center p-16 border-t">
+  <h2 class="font-normal mb-8">
+    A Header About How Great This Is
+  </h2>
+
+  <p class="w-1/2 mb-8">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Fusce rutrum congue nulla, in vestibulum tortor iaculis ut.
+    Integer sagittis nisl tempus molestie tincidunt.
+  </p>
+
+  <p class="w-1/2 mb-8">
+    Mauris efficitur, ligula quis porta lacinia, quam sem dictum justo, sed ultrices turpis nisl et risus.
+    Nam sit amet varius velit. Phasellus placerat egestas massa, eget suscipit est accumsan at.
+    Pellentesque molestie fermentum iaculis.
+  </p>
+
 </div>
 
 <div class="bg-grey-lighter shadow-inner w-full flex flex-col items-center p-16">
   <h2 class="font-normal mb-8">
-    Here are some people that wants your help
+    Here Are Some People That Wants Your Help
   </h2>
 
   <div class="flex flex-row flex-wrap w-1/2">
@@ -22,9 +55,9 @@
   </div>
 </div>
 
-<div class="w-full flex flex-col items-center p-16">
+<div class="w-full flex flex-col items-center p-16 border-t">
   <h2 class="font-normal mb-8">
-    And here is some of our awesome reviewers
+    And Here Is Some of Our Awesome Reviewers
   </h2>
 
   <div class="flex flex-row flex-wrap w-1/2">

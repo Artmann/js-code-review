@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+  <%= render 'layouts/head' %>
+
+  <nav class="container mx-auto flex justify-between items-center h-16 px-4 lg:px-8">
+    <%= link_to("JS Code Review", :root, class: 'no-underline text-black text-lg') %>
+    <div class="hidden lg:flex">
+      <%= link_to('Submit your code', :new_review_request, class: 'text-black no-underline block mr-4 hover:underline') %>
+      <a href="#" class="text-black no-underline block mr-4 hover:underline">Post a review</a>
+      <% if user_signed_in? %>
+        <a href="#" class="text-black no-underline block mr-4 hover:underline">My profile</a>
+        <%= link_to('Sign out', :destroy_user_session, method: :delete, class: 'text-black no-underline block mr-4 hover:underline') %>
+      <% else %>
+        <%= link_to('Sign in', :new_user_session, class: 'text-black no-underline block mr-4 hover:underline') %>
+      <% end %>
+    </div>
+  </nav>
+
+  <body>
+
+    <%= yield %>
+
+  </body>
+</html>

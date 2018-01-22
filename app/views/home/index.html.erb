@@ -1,3 +1,39 @@
-<div class="text-center p-8">
-  <h1>JS Code Review</h1>
+<div class="text-center px-4 py-16 w-full">
+  <h1 class="mb-8">Hero Title</h1>
+  <p class="mb-8">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pharetra vehicula posuere.
+  </p>
+
+  <%= link_to('Sign Up Now', :new_user_registration, class: 'inline-block mb-8 button') %>
+</div>
+
+<div class="bg-grey-lighter shadow-inner w-full flex flex-col items-center p-16">
+  <h2 class="font-normal mb-8">
+    Here are some people that wants your help
+  </h2>
+
+  <div class="flex flex-row flex-wrap w-1/2">
+  <% @review_requests.each do |req| %>
+    <div class="bg-white shadow p-4 flex items-center w-64 m-2">
+      <%= gravatar_image_tag(req.user.email, :alt => req.user.name, class: 'rounded-full w-8 h-8 mr-4') %>
+      <%= link_to(req.title, req, class: 'text-black text-lg no-underline hover:underline truncate') %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="w-full flex flex-col items-center p-16">
+  <h2 class="font-normal mb-8">
+    And here is some of our awesome reviewers
+  </h2>
+
+  <div class="flex flex-row flex-wrap w-1/2">
+  <% @reviewers.each do |reviewer| %>
+    <div class="bg-white shadow p-4 flex items-center w-64 m-2">
+      <%= gravatar_image_tag(reviewer.email, :alt => reviewer.name, class: 'rounded-full w-8 h-8 mr-4') %>
+      <p class="text-black text-lg no-underline hover:underline truncate"><%= reviewer.name %></p>
+    </div>
+  <% end %>
+  </div>
+
 </div>

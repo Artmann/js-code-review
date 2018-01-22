@@ -16,18 +16,6 @@ export default class RequestReviewForm extends Component {
     this.state = { errorMessage: null, files, isPublishing: false, title: '' };
   }
 
-  errorMessage() {
-    if (!errorMessage) {
-    return (<div></div>);
-    }
-
-    return (
-      <div>
-        {state.errorMessage}
-      </div>
-    );
-  }
-
   render() {
     const { state } = this;
 

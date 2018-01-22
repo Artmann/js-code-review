@@ -43,6 +43,8 @@ export default class FileForm extends Component {
           onChange={props.onContentChange}
           editorProps={{$blockScrolling: true}}
           value={props.file.content}
+          tabSize={2}
+          width='100%'
         />
       </div>
     </div>;

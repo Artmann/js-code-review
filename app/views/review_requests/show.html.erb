@@ -1,0 +1,17 @@
+<div class="flex flex-row items-center mb-8">
+  <div class="text-center mr-16">
+    <%= gravatar_image_tag(@review_request.user.email, :alt => @review_request.user.name, class: 'rounded-full w-16 h-16 mb-2') %>
+    <p class="text-sm">
+      <%= @review_request.user.name %>
+    </p>
+  </div>
+  <div>
+    <h1 class="mb-2"><%= @review_request.title %></h1>
+    <p class="text-sm">
+      This block will contain a short description of the code.
+    </p>
+  </div>
+</div>
+
+<div id="review-request", data-files="<%= @review_request.source_files.to_json %>" class="w-full"></div>
+<%= javascript_pack_tag 'review_request' %>

@@ -14,6 +14,7 @@ gem 'redis', '~> 3.0'
 
 gem 'webpacker', '~> 3.0'
 gem 'devise'
+gem 'gravatar_image_tag'
 
 group :development, :test do
   gem 'sqlite3'
